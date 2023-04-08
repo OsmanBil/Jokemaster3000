@@ -32,7 +32,7 @@ export class AppComponent {
     this.jokeIsLoading();
 
 
-    const response = fetch('http://localhost:5000', {
+    const response = fetch('https://ec2-3-72-88-232.eu-central-1.compute.amazonaws.com/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

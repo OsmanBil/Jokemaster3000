@@ -32,7 +32,7 @@ export class AppComponent {
     this.jokeIsLoading();
 
 
-    const response = fetch('https://3.126.74.85/', {
+    const response = fetch('http://localhost:5000', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

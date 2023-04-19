@@ -2,7 +2,6 @@ import express from 'express'
 import * as dotenv from 'dotenv'
 import cors from 'cors'
 import { Configuration, OpenAIApi } from 'openai'
-import * as https from 'https';
 
 dotenv.config()
 
@@ -13,9 +12,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const app = express()
-app.use(cors({
-  origin: '*'
-}));
+app.use(cors())
 app.use(express.json())
 
 app.get('/', async (req, res) => {
@@ -48,7 +45,4 @@ app.post('/', async (req, res) => {
   }
 })
 
-// app.listen(80, () => console.log('AI server started on http://localhost:5000'))
-https.createServer({}, app).listen(443, () => {
-  console.log('Listening...')
-});
+app.listen(5000, () => console.log('AI server started on http://localhost:5000'))
